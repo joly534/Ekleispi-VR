@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a-scene renderer="antialias: true;" id="world">
+    <a-scene  physics="debug: true" renderer="antialias: true; logarithmicDepthBuffer: true" id="world">
 
       <a-assets>
         <!---------------------textures du sol--------------------->
@@ -54,10 +54,10 @@
       <!---------------------lumières Aziz !!!--------------------->
       <!-- <a-entity 
         light="type: point; color: white; intensity: 0.9"
-        position="0 5 0">
+        position="0 5 0; castShadow:true">
       </a-entity>    -->
-      <!-- <a-entity light="type: ambient; color: white; intensity: 0.5;"></a-entity> -->
-      <a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 0.5"></a-entity>
+      <!-- <a-entity light="type: ambient; color: white; intensity: 0.5; castShadow:true"></a-entity> -->
+      <a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 0.7; castShadow:true"></a-entity>
       
       <!---------------------Le sol--------------------->
       <a-plane static-body
