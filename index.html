@@ -1,6 +1,6 @@
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@4.0.1/dist/aframe-physics-system.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a-scene  physics="debug: true" renderer="antialias: true; logarithmicDepthBuffer: true" id="world">
+    <a-scene  physics="debug: true" renderer="antialias: true" id="world">
 
       <a-assets>
         <!---------------------textures du sol--------------------->
@@ -33,11 +33,11 @@
 
 
       <!---------------------texte de demo--------------------->
-      <a-entity 
+      <!-- <a-entity 
         text="value: Hello World !!!; width:5; color:#ffd700; align:center" id="texte"
         position="-0.1 1.5 -3" 
         animation="property: position; to: -0.1 2 -3; loop:true; dir:alternate; dur:2000; easing:easeInOutQuart ">
-      </a-entity>
+      </a-entity> -->
       
       <!---------------------ciel--------------------->
       <a-sky color="white" src="#ciel" ></a-sky>
@@ -57,7 +57,7 @@
         position="0 5 0; castShadow:true">
       </a-entity>    -->
       <!-- <a-entity light="type: ambient; color: white; intensity: 0.5; castShadow:true"></a-entity> -->
-      <a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 0.7; castShadow:true"></a-entity>
+      <a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 0.8; castShadow:true"></a-entity>
       
       <!---------------------Le sol--------------------->
       <a-plane static-body
@@ -228,7 +228,7 @@
       <!-- <a-entity laser-controls="hand: left"  raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700"></a-entity>
       <a-entity laser-controls="hand: right" raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700"></a-entity> -->
 
-      <script src="main.js"></script>
+      <!-- <script src="main.js"></script> -->
       <!-- <a-entity 
         hand-controls="" magicleap-controls="hand: right; model: false" 
         vive-controls="model: false" oculus-touch-controls="model: true" 
