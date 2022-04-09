@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a-scene physics="debug: true" id="world">
+    <a-scene  id="world">
 
       <a-assets>
         <!---------------------textures du sol--------------------->
@@ -192,7 +192,7 @@
       <!---------------------Mur de devant--------------------->
       <a-plane static-body 
         position="15 2.5 -10" rotation="0 0 0" width="50" height="5"  src="#carrelage" repeat="10 1" 
-        normal-texture-repeat="11"  roughness="0.5">
+        normal-texture-repeat="11"  shadow="receive:true" roughness="0.5">
       </a-plane>
       <!---------------------videos sur le mur de devant--------------------->
       <a-text value="Nouvelle prestation" width="5" color="ffd700" position="-8.4 3.3 -9.99" color="black">
@@ -222,8 +222,7 @@
         normal-texture-repeat="11"  shadow="receive:true">
       </a-plane>    
 
-      <a-entity oculus-touch-controls="hand: left"></a-entity>
-<a-entity oculus-touch-controls="hand: right"></a-entity>
+      
 
       <!-- <a-entity laser-controls="hand: left"  raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700"></a-entity>
       <a-entity laser-controls="hand: right" raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700"></a-entity> -->
