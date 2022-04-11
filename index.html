@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a-scene  physics="debug: true" renderer="antialias: true" id="world">
+    <a-scene   renderer="antialias: true" id="world" fog="type: exponential; color: black; density: 0.0025">
 
       <a-assets>
         <!---------------------textures du sol--------------------->
@@ -40,8 +40,7 @@
       </a-entity> -->
       
       <!---------------------ciel--------------------->
-      <a-sky color="white" src="#ciel" ></a-sky>
-      
+      <a-sky color="darkblue"></a-sky>      
       
       <a-mixin id="cube" geometry="primitive: box; width: 0.33; height: 0.33; depth: 0.33"
                  hoverable grabbable draggable droppable cursor-listener
@@ -57,16 +56,29 @@
         position="0 5 0; castShadow:true">
       </a-entity>    -->
       <!-- <a-entity light="type: ambient; color: white; intensity: 0.5; castShadow:true"></a-entity> -->
-      <a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 0.7; castShadow:true"></a-entity>
+      <!-- <a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 0.7; castShadow:true"></a-entity> -->
       
       <!---------------------Le sol--------------------->
-      <a-plane static-body
+      <!-- <a-plane static-body
         position="15 0 15" rotation="-90 0 0" width="50" height="50"  src="#marbre" repeat="60 60" 
         normal-texture-repeat="11"  shadow="receive:true" roughness="0.8">
-      </a-plane>
+      </a-plane> -->
       <!---------------------Collision pour le sol--------------------->      
-      <a-box body="type: static; shape: box" width=100 height=0.001 depth=100 visible="false"></a-box>
+      <!-- <a-box body="type: static; shape: box" width=100 height=0.001 depth=100 visible="false"></a-box> -->
+      
+      <!-- <a-plane static-body
+      position="0 0.1 0" rotation="-90 0 0" width="10" height="300" color="#white" roughness="0.8"  opacity="0.5">
+      </a-plane> -->
+      
+      <a-box body="type: static; shape: box" width=10 height=0.001 depth=300 color="aqua" opacity="0.1" position="0 0.1 0"></a-box>
 
+      <a-sphere position="0 -2 150 " radius="0.2" color="white" 
+      animation="property: position; to: 0 -2 -155; dur:15000; easing:easeInOutQuart" > </a-sphere>
+
+      <a-sphere position="-150 200 -350 " radius="20" color="#ffd700"> </a-sphere>
+      <a-sphere position="-150 190 -330 " radius="20" color="black"> </a-sphere>
+      <a-entity text= "value: EKLEIPSI MEDIAS; width: 600; color: #ffd700; align:center" position="0 200 -350"></a-entity>
+      <a-entity text= "value: Vous avez une idée ? Nous avons le procédé; width: 600; color: #ffd700; align:center" position="0 200 -450"></a-entity>
       
       <!---------------------Bureau----------------------> 
       <a-entity>       
@@ -191,12 +203,12 @@
 
 
       <!---------------------Mur de devant--------------------->
-      <a-plane static-body 
+      <!-- <a-plane static-body 
         position="15 2.5 -10" rotation="0 0 0" width="50" height="5"  src="#carrelage" repeat="10 1" 
         normal-texture-repeat="11"  shadow="receive:true"roughness="0.5">
-      </a-plane>
+      </a-plane> -->
       <!---------------------videos sur le mur de devant--------------------->
-      <a-text value="Nouvelle prestation" width="5" color="ffd700" position="-8.4 3.3 -9.99" color="black">
+      <!-- <a-text value="Nouvelle prestation" width="5" color="ffd700" position="-8.4 3.3 -9.99" color="black">
       </a-text>
       <a-video id="video_prestations" autoplay="false"></a-video>
       <a-image src="assets/images/ctrl/play.png" id="play" width="0.5" height="0.5" position="-7.78 1 -9.99"
@@ -205,23 +217,23 @@
                 event-set__hoveroff="_event: mouseleave; material.opacity: 1; transparent: true"
                 event-set__click="_event: mouseclick; function: videoPlay;"
                 ></a-image>
-      <a-image src="assets/images/ctrl/pause.png" id="pause" width="0.59" height="0.59" position="-7.025 1 -9.99"></a-image>
+      <a-image src="assets/images/ctrl/pause.png" id="pause" width="0.59" height="0.59" position="-7.025 1 -9.99"></a-image> -->
 
       <!---------------------Mur de derriere--------------------->
-      <a-plane  static-body
+      <!-- <a-plane  static-body
         position="15 2.5 40" rotation="0 -180 0" width="50" height="5"  src="#carrelage" repeat="10 1" 
         normal-texture-repeat="11"  shadow="receive:true">
-      </a-plane>
+      </a-plane> -->
       <!---------------------Mur de gauche--------------------->
-      <a-plane  static-body
+      <!-- <a-plane  static-body
         position="-10 2.5 15" rotation="0 90 0" width="50" height="5"  src="#carrelage" repeat="10 1"
         normal-texture-repeat="11"  shadow="receive:true">
-      </a-plane>
+      </a-plane> -->
       <!---------------------Mur de droite--------------------->
-      <a-plane static-bodys
+      <!-- <a-plane static-bodys
         position="40 2.5 15" rotation="0 -90 0" width="50" height="5"  src="#carrelage" repeat="10 1" 
         normal-texture-repeat="11"  shadow="receive:true">
-      </a-plane>    
+      </a-plane>     -->
 
       
 
