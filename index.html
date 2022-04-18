@@ -24,9 +24,21 @@
         <img id="fresque" src="assets/images/loveisinthemer2.jpg"></img>
       </a-assets>
 
-
+      <a-entity id="player" collider-check>
+        <a-entity raycaster="objects: .collidable" position="0 -0.9 0" rotation="90 0 0"></a-entity>
+      </a-entity>
+      <a-entity class="collidable" geometry="primitive: box" position="1 0 0"></a-entity>
       <a-entity laser-controls="hand: left"  raycaster="lineColor: red; lineOpacity: 1" defaultModelColor="#ffd700" raycaster="far:3"></a-entity>
       <a-entity laser-controls="hand: right" raycaster="lineColor: red; lineOpacity: 1" defaultModelColor="#ffd700" raycaster="far:3"></a-entity>
+      
+      
+      <a-entity  
+        oculus-touch-controls="hand: left" roughness="0.8">
+      </a-entity>
+      <a-entity 
+        oculus-touch-controls="hand: right" roughness="0.8">
+      </a-entity>
+      
       <!---------------------caméra et curseur--------------------->
       <!-- <a-entity camera look-controls position="0 2 0" id="camera">
         <a-entity id="ring" cursor="fuse: true; fuseTimeout: 500"
@@ -263,12 +275,6 @@
 
       
 
-      <a-entity  
-        oculus-touch-controls="hand: left" roughness="0.8">
-      </a-entity>
-      <a-entity 
-        oculus-touch-controls="hand: right" roughness="0.8">
-      </a-entity>
       
 
       <!-- <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
