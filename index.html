@@ -261,20 +261,16 @@
 
       
 
-      <a-entity laser-controls="hand: left"  raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700" raycaster="far:3"></a-entity>
-      <a-entity laser-controls="hand: right" raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700" raycaster="far:3"></a-entity>
-
       <a-entity  
-        hand-controls="model: false" magicleap-controls="model: false" 
-        vive-controls="model: false" oculus-touch-controls="model: true" 
-        windows-motion-controls="model: false" position="-0.10046 1.3 0">
+        oculus-touch-controls="model: true" position="-0.10046 1.3 0">
       </a-entity>
       <a-entity 
-        hand-controls="model: false" magicleap-controls="model: false" 
-        vive-controls="model: false" oculus-touch-controls="model: true" 
-        windows-motion-controls="model: false" position="0.10046 1.3 0">
+        oculus-touch-controls="model: true" position="0.10046 1.3 0">
       </a-entity>
       
+      <a-entity laser-controls="oculus-touch-controls: left"  raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700" raycaster="far:3"></a-entity>
+      <a-entity laser-controls="oculus-touch-controls: right" raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700" raycaster="far:3"></a-entity>
+
       <!-- <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
       <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity> -->
       
