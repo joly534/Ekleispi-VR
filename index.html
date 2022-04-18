@@ -219,7 +219,7 @@
               position="0 1.02 -3" visible="false"></a-box>
 
       <!---------------------Les cubes--------------------->
-      <a-entity class="cube" mixin="cube" position="0 3 -3.5" material="color: red" metalness="0.5"></a-entity>
+      <a-entity class="cube" mixin="cube" position="0 3 -3.5" material="color: red" metalness="0.5" hoverable></a-entity>
       <a-entity class="cube" mixin="cube" position="-1 3 -2.7" material="color: blue" metalness="0.5"></a-entity>
       <a-entity class="cube" mixin="cube" position="-1 3 -3.2" material="color: blue" metalness="0.5"></a-entity>
       <a-entity class="cube" mixin="cube" position="0.9 3 -3.2" material="color: green" metalness="0.5"></a-entity>
@@ -264,15 +264,15 @@
       <a-entity laser-controls="hand: left"  raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700" raycaster="far:3"></a-entity>
       <a-entity laser-controls="hand: right" raycaster="lineColor: red; lineOpacity: 0.5" defaultModelColor="#ffd700" raycaster="far:3"></a-entity>
 
-      <a-entity 
-        hand-controls="" magicleap-controls="" 
-        vive-controls="" oculus-touch-controls="model: true" 
-        windows-motion-controls="" position="-0.10046 1.3 0">
+      <a-entity  
+        hand-controls="model: false" magicleap-controls="model: false" 
+        vive-controls="model: false" oculus-touch-controls="model: true" 
+        windows-motion-controls="model: false" position="-0.10046 1.3 0">
       </a-entity>
       <a-entity 
-        hand-controls="" magicleap-controls="" 
-        vive-controls="" oculus-touch-controls="model: true" 
-        windows-motion-controls="" position="0.10046 1.3 0">
+        hand-controls="model: false" magicleap-controls="model: false" 
+        vive-controls="model: false" oculus-touch-controls="model: true" 
+        windows-motion-controls="model: false" position="0.10046 1.3 0">
       </a-entity>
       
       <!-- <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
