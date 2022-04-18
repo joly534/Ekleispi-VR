@@ -7,3 +7,7 @@
 #entreprise{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+#principale {
+    animation: slide 10s alternate;
+}

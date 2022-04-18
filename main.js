@@ -3,16 +3,12 @@ let scene = document.getElementById('world');
 
 setInterval(() => {
     for(let i=0;i<cubes.length;i++){
-        let Couleurs = ['black', '#ffd700', '#ffd700', '#ffd700'];
-        
+        let Couleurs = ['black', '#ffd700', '#ffd700', '#ffd700'];        
         let randomize = Math.floor(Math.random()* 7);
         cubes[i].setAttribute('material', {
             color:Couleurs[randomize]
         })
-
-    }
-    
-
+    };
 }, 500);
 
 
@@ -25,27 +21,21 @@ setInterval(() => {
 
 let ring= document.getElementById('ring');
 let camera = document.getElementById('camera');
-document.addEventListener('keydown', function (e) {
-    console.log(e.codez)
-    if(e.code === 'KeyA') {
-        console.log(camera.getAttribute('position'));
-        camera.object3D.position.x -=0.05;
-    } else if(e.code === 'KeyD'){
-        camera.object3D.position.x +=0.05;
-
-    }  else if(e.code === 'KeyW'){
-        camera.object3D.position.z -=0.05;
-
-    }  else if(e.code === 'KeyS'){
-        camera.object3D.position.z +=0.05;
-
-    } 
-});
+// document.addEventListener('keydown', function (e) {
+//     if(e.code === 'KeyA') {
+//         camera.object3D.position.x -=0.05;
+//     } else if(e.code === 'KeyD'){
+//         camera.object3D.position.x +=0.05;
+//     }  else if(e.code === 'KeyW'){
+//         camera.object3D.position.z -=0.05;
+//     }  else if(e.code === 'KeyS'){
+//         camera.object3D.position.z +=0.05;
+//     } 
+// });
 
 
 // éléments du bureau
 let bureau = [];
-
 let tiroir1 = document.getElementById('tiroir1');
 let tiroir2 = document.getElementById('tiroir2');
 let tiroir3 = document.getElementById('tiroir3');
@@ -66,3 +56,33 @@ bureau.forEach(element => {
     })
     
 });
+//indication de sens de progression
+function createSphereSense() {
+    let marquage=[];
+    let groupe = document.createElement('a-entity');
+    let sphere1 = document.createElement('a-sphere');
+    let sphere2 = document.createElement('a-sphere');
+    let sphere3 = document.createElement('a-sphere');
+    let sphere4 = document.createElement('a-sphere');
+    let sphere5 = document.createElement('a-sphere');
+
+    marquage.push(sphere1, sphere2, sphere3, sphere4, sphere5)
+
+    console.log(marquage)
+    groupe.setAttribute('id', 'principale');
+    sphere1.setAttribute('position', {x: 0, y:-1, z: 0}, true);
+    sphere2.setAttribute('position', {x: -2, y:-1, z:2}, true);
+    sphere3.setAttribute('position', {x: -4, y:-1, z:4}, true);
+    sphere4.setAttribute('position', {x: 2, y:-1, z:2}, true);
+    sphere5.setAttribute('position', {x: 4, y:-1, z:4}, true);
+    console.log(groupe)
+
+    for (let i=0; i<marquage.length; i++){
+        marquage[i].setAttribute('radius', 0.2);
+        groupe.appendChild(marquage[i]);
+    }
+    scene.appendChild(groupe);
+
+}
+
+createSphereSense()
