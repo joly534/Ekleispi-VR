@@ -26,17 +26,18 @@
         <img id="fresque" src="assets/images/loveisinthemer2.jpg"></img>
       </a-assets>
 
-      
-      <a-entity laser-controls="hand: left"  raycaster="objects: [mixin='cube'], .links; lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
-      <a-entity laser-controls="hand: right" raycaster="objects: [mixin='cube'], .links;lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
-      
-
-      <!--le coin des réalisations-->
-      <a-entity id="realisation"
-                position="7.5d 0 -6">
-        <!--le sol-->
-        <a-plane width="10" height="5" position="" rotation="-90 0 0" color=""></a-plane>
+      <a-entity movement-controls position position="0 0 0">
+        <!--camera-->
+        <a-entity camera position="0 1.6 0">
+        </a-entity>
+        <a-entity laser-controls="hand: left"  raycaster="objects: [mixin='cube'], .links; lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
+        <a-entity laser-controls="hand: right" raycaster="objects: [mixin='cube'], .links;lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
+        
       </a-entity>
+
+
+
+      
       
       <!---------------------caméra et curseur--------------------->
       <!-- <a-entity camera look-controls position="0 2 0" id="camera">
@@ -59,17 +60,12 @@
                 rotation="0 90 0"></a-image> -->
 
       <!---------------------ciel--------------------->
-      <a-sky color="#afafaf"></a-sky>      
+      <a-sky color="#blue"></a-sky>      
       
       
       
       <!---------------------lumières Aziz !!!--------------------->
-      <!-- <a-entity 
-        light="type: point; color: white; intensity: 0.9"
-        position="0 5 0; castShadow:true">
-      </a-entity>    -->
-      <!-- <a-entity light="type: ambient; color: white; intensity: 0.5; castShadow:true"></a-entity> -->
-      <!-- <a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 0.7; castShadow:true"></a-entity> -->
+      <a-entity light="type: hemisphere; color: white; groundColor: white; intensity: 0.9; castShadow:true"></a-entity> 
       
       <!---------------------Le sol--------------------->
       <!-- <a-plane static-body
@@ -111,7 +107,7 @@
       </a-entity> 
       
       <!---------------------Bureau----------------------> 
-      <a-entity position="0 0.1 -0.9">       
+      <a-entity position="2 0.1 -0.9" rotation="0 -90 0">       
         <!---------------------plateau du dessus----------------------> 
         <a-box width="2" height="0.05" depth="1" position="0 1 0" src="#bois-crade"  shadow="receive:true"
                 metalness="0.5"></a-box>
