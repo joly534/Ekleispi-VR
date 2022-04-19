@@ -9,14 +9,13 @@
 
     <title>Ekleipsi Médias VR</title>
 
-    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a-scene   renderer="antialias: true" id="world" fog="type: exponential; color: black; density: 0.0015">
+    <a-scene renderer="antialias: true" id="world" fog="type: exponential; color: black; density: 0.0015">
 
       <a-assets>
         <!---------------------textures du sol--------------------->
-        <img id="marbre" src="assets/textures/sols/marbre/marbre_occlusion.jpg"></img>
+        <img id="dancefloor" src="assets/images/ground.jpg"></img>
         <!---------------------On charge le ciel--------------------->
         <img id="ciel" src="assets/images/clouds.jpg"></img>
         <!---------------------textures des murs--------------------->
@@ -84,9 +83,7 @@
       position="0 0.1 0" rotation="-90 0 0" width="10" height="300" color="#white" roughness="0.8"  opacity="0.5">
       </a-plane> -->
       
-      <a-box body="type: static; shape: box" 
-              width=10 height=0.001 depth=300 
-              color="aqua" opacity="0.1" position="0 0.1 0"></a-box>
+      <a-plane static-body src="#dancefloor" position="0 0 0" rotation="-90 0 0" repeat="5 5" width="100" height="100"></a-plane>
 
       <a-sphere position="0 -2 150 " 
                 radius="0.2" color="white"
