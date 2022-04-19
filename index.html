@@ -1,15 +1,18 @@
 <html>
   <head>
+    <meta charset="UTF-8">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@4.0.1/dist/aframe-physics-system.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+
     <title>Ekleipsi Médias VR</title>
+
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a-scene   renderer="antialias: true" id="world" fog="type: exponential; color: black; density: 0.0025">
+    <a-scene   renderer="antialias: true" id="world" fog="type: exponential; color: black; density: 0.0015">
 
       <a-assets>
         <!---------------------textures du sol--------------------->
@@ -28,6 +31,13 @@
       <a-entity laser-controls="hand: left"  raycaster="objects: [mixin='cube entity']; lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
       <a-entity laser-controls="hand: right" raycaster="objects: [mixin='cube entity']; lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
       
+
+      <!--le coin des réalisations-->
+      <a-entity id="realisation"
+                position="7.5d 0 -6">
+        <!--le sol-->
+        <a-plane width="10" height="5" position="" rotation="-90 0 0" color=""></a-plane>
+      </a-entity>
       
       <!---------------------caméra et curseur--------------------->
       <!-- <a-entity camera look-controls position="0 2 0" id="camera">
@@ -37,25 +47,20 @@
                   material="color: #ffd700; shader: flat"></a-entity>
       </a-entity> -->
 
-
       <!---------------------texte de demo--------------------->
       <!-- <a-entity 
         text="value: Hello World !!!; width:5; color:#ffd700; align:center" id="texte"
         position="-0.1 1.5 -3" 
         animation="property: position; to: -0.1 2 -3; loop:true; dir:alternate; dur:2000; easing:easeInOutQuart ">
       </a-entity> -->
-
       
       <!---------------------FRESQUE--------------------->
-      <a-image src="#fresque" width="30" height="15"
+      <!-- <a-image src="#fresque" width="30" height="15"
                 position="-5 7.5 -15"
-                rotation="0 90 0"></a-image>
-
-
-
+                rotation="0 90 0"></a-image> -->
 
       <!---------------------ciel--------------------->
-      <a-sky color="darkblue"></a-sky>      
+      <a-sky color="#afafaf"></a-sky>      
       
       <a-mixin id="cube" geometry="primitive: box; width: 0.33; height: 0.33; depth: 0.33"
                  hoverable grabbable draggable droppable cursor-listener
@@ -63,7 +68,6 @@
                  event-set__hoveroff="_event: mouseleave; material.opacity: 1; transparent: false"
                  body="shape: box" shadow></a-mixin>
         </a-mixin>
-
       
       <!---------------------lumières Aziz !!!--------------------->
       <!-- <a-entity 
@@ -95,10 +99,23 @@
 
       <!---------------------LE LOGO--------------------->
       <a-sphere position="-150 200 -350 " radius="20" color="#ffd700"> </a-sphere>
-      <a-sphere position="-150 190 -330 " radius="20" color="black"> </a-sphere>
-      <a-entity position="0 150 -400">
-        <a-text value="EKLEIPSI MEDIAS" width="600" color="#ffd700"></a-text>
-        <a-text value="value: Vous avez une idée ? Nous avons le procédé" width="500" color="#ffd700"></a-text>
+      <a-sphere position="-150 197 -340 " radius="20" color="black"
+                animation="property: position; to: -150 190 -300; loop:true;dir:alternate; dur:5000; easing:easeInOutQuart">
+      </a-sphere>
+      <!--TITRE ET SLOGAN-->
+      <a-entity position="-50 200 -400">
+        <a-text value="EKLEIPSI MEDIAS" font="assets/font/Iceland/Iceland-Regular-msdf.json" 
+                width="700" color="#ffd700" position="0 40 0"
+                negate="false">
+        </a-text>
+        <a-text value="Vous avez une idée ?" font="assets/font/Iceland/Iceland-Regular-msdf.json" 
+                width="600" color="#ffd700" position="0 0 0"
+                negate="false">
+        </a-text>
+        <a-text value="Nous avons le procédé !" font="assets/font/Iceland/Iceland-Regular-msdf.json" 
+                width="600" color="#ffd700" position="0 -40 0"
+                negate="false">
+        </a-text>
       </a-entity> 
       
       <!---------------------Bureau----------------------> 
