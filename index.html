@@ -28,8 +28,8 @@
       </a-assets>
 
       
-      <a-entity laser-controls="hand: left"  raycaster="objects: [mixin='cube']; lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
-      <a-entity laser-controls="hand: right" raycaster="objects: [mixin='cube']; lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
+      <a-entity laser-controls="hand: left"  raycaster="objects: [mixin='cube'], .links; lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
+      <a-entity laser-controls="hand: right" raycaster="objects: [mixin='cube'], .links;lineColor: red; lineOpacity: 0.6;far:4"></a-entity>
       
 
       <!--le coin des réalisations-->
@@ -62,12 +62,7 @@
       <!---------------------ciel--------------------->
       <a-sky color="#afafaf"></a-sky>      
       
-      <a-mixin id="cube" geometry="primitive: box; width: 0.33; height: 0.33; depth: 0.33"
-                 hoverable grabbable draggable droppable cursor-listener
-                 event-set__hoveron="_event: mouseenter; material.opacity: 0.7; transparent: true"
-                 event-set__hoveroff="_event: mouseleave; material.opacity: 1; transparent: false"
-                 body="shape: box" shadow></a-mixin>
-        </a-mixin>
+      
       
       <!---------------------lumières Aziz !!!--------------------->
       <!-- <a-entity 
@@ -245,10 +240,14 @@
         <a-box class="cube" mixin="cube" position="-1 0 -3.2" material="color: blue" metalness="0.5" hoverable grabbable draggable droppable cursor-listener></a-box>
         <a-box class="cube" mixin="cube" position="0.9 0 -3.2" material="color: green" metalness="0.5" hoverable grabbable draggable droppable cursor-listener></a-box>
         <a-box class="cube" mixin="cube" position="0.9 0 -2.7" material="color: green" metalness="0.5" hoverable grabbable draggable droppable cursor-listener></a-box>
-  
-  
-
       </a-entity>
+      <!--la gestion des evenement sur les cubes-->
+      <a-mixin id="cube" geometry="primitive: box; width: 0.33; height: 0.33; depth: 0.33"
+                 hoverable grabbable draggable droppable cursor-listener
+                 event-set__hoveron="_event: mouseenter; material.opacity: 0.7; transparent: true"
+                 event-set__hoveroff="_event: mouseleave; material.opacity: 1; transparent: false"
+                 body="shape: box" shadow></a-mixin>
+      </a-mixin>
       <!---------------------Mur de devant--------------------->
       <!-- <a-plane static-body 
         position="15 2.5 -10" rotation="0 0 0" width="50" height="5"  src="#carrelage" repeat="10 1" 
