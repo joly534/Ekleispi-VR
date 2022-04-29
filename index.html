@@ -41,26 +41,27 @@
       </a-entity>
 
       <a-entity id="services">
-        <a-plane 
-          class="container" width="1" height="2"
-          position="0 2 -2" color="#afafaf">
+        <a-plane position="0 2 -2">
           
-          <a-image src="#depannage" position="0 0.5 0.01"></a-image>
-          <a-text value="Dépannage Informatique :
-                        . Réparation
-                        . Nettoyage
-                        . Installation
-                        . Formation" 
-            font="assets/font/Iceland/Iceland-Regular-msdf.json"
-            scale="0.2 0.2 1"
-            negate="false" position="-0.4 -0.3 0">
-          </a-text>
           <a-video src="#video-depannage"
                     position="0 -0.5 0"
                     width="1.6" height="0.9">
             <a-img src="#play"
                     position="0 -0.1 0"></a-img>
           </a-video>
+          <a-plane color="black" width="0.6" height="0.35"
+                   position="-0.5 -0.78 0.001">
+                   <a-text  value="Dépannage Informatique :
+                                 . Réparation
+                                 . Nettoyage
+                                 . Installation
+                                 . Formation" 
+                            position="-0.25 0 0"
+                            font="assets/font/Iceland/Iceland-Regular-msdf.json"
+                            scale="0.2 0.2 1"
+                            negate="false" ></a-text>
+
+          </a-plane>
           
         </a-plane>
       </a-entity>
