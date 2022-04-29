@@ -22,6 +22,13 @@
         <img id="fresque" src="assets/images/loveisinthemer2.jpg"></img>
         <!---------------------IMAGE DEPANNAGE--------------------->
         <img id="depannage" src="assets/images/dépannage/depannage.jpg"></img>
+        <!---------------------IMAGE PLAY--------------------->
+        <img id="depannage" src="assets/images/ctrl/play.png"></img>
+        <!---------------------IMAGE Pause--------------------->
+        <img id="depannage" src="assets/images/ctrl/pause.png"></img>
+        <!---------------------VIDEO DEPANNAGE--------------------->
+        <video id="video-depannage" autoplay src="assets/video/reparation_ecran_lenovo.mp4"></video>
+
       </a-assets>
 
       <a-entity movement-controls position="0 1 0">
@@ -38,14 +45,22 @@
           class="container" width="1" height="2"
           position="0 2 -2" color="#afafaf">
           
-          <a-image src="#depannage" position="-0.01 0.5 0"></a-image>
+          <a-image src="#depannage" position="0 0.5 0.01"></a-image>
           <a-text value="Dépannage Informatique :
                         . Réparation
                         . Nettoyage
                         . Installation
                         . Formation" 
             font="assets/font/Iceland/Iceland-Regular-msdf.json"
-            negate="false"></a-entity>
+            scale="0.2 0.2 1"
+            negate="false" position="-0.4 -0.3 0">
+          </a-text>
+          <a-video src="#video-depannage"
+                    position="0 -0.5 0"
+                    width="2" height="1.5">
+            <a-img src="#play"
+                    position="0 -0.1 0"></a-img>
+          </a-video>
           
         </a-plane>
       </a-entity>
