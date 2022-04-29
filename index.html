@@ -73,7 +73,7 @@
         normal-texture-repeat="11"  shadow="receive:true" roughness="0.8">
       </a-plane> -->
       <!---------------------Collision pour le sol--------------------->      
-      <!-- <a-box body="type: static; shape: box" width=100 height=0.001 depth=100 visible="false"></a-box> -->
+      <a-box body="type: static; shape: box" width=100 height=0.001 depth=100 visible="false"></a-box>
       
       <!-- <a-plane static-body
       position="0 0.1 0" rotation="-90 0 0" width="10" height="300" color="#white" roughness="0.8"  opacity="0.5">
@@ -241,6 +241,9 @@
                  event-set__hoveroff="_event: mouseleave; material.opacity: 1; transparent: false"
                  body="shape: box" shadow></a-mixin>
       </a-mixin>
+
+
+
       <!---------------------Mur de devant--------------------->
       <!-- <a-plane static-body 
         position="15 2.5 -10" rotation="0 0 0" width="50" height="5"  src="#carrelage" repeat="10 1" 
